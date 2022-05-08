@@ -26,7 +26,7 @@ const Main = () => {
       setHistoriaActual(historia);
       setOpcionaActual(a);
       setOpcionbActual(b);
-      setAnterior("a");
+      setAnterior("A");
       setRecordatorio(recordatorio + anterior);
     }
   };
@@ -41,7 +41,7 @@ const Main = () => {
       setHistoriaActual(historia);
       setOpcionaActual(a);
       setOpcionbActual(b);
-      setAnterior("b");
+      setAnterior("B");
       setRecordatorio(recordatorio + anterior);
     }
   };
@@ -63,10 +63,8 @@ const Main = () => {
           seleccionAnterior={ anterior }
           historialOpciones={ listaHistorial.map(
             (e, index) => (
-              <li key={ index }>{ e }</li>
-            ),
-            anterior
-          )}
+              <li key={ index }>{ e }</li>)
+            )}
         />
       </div>
   )
