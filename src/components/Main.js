@@ -14,7 +14,7 @@ const Main = () => {
   const [opcionaActual, setOpcionaActual] = useState(obtenerPorId("1").opciones.a);
   const [opcionbActual, setOpcionbActual] = useState(obtenerPorId("1").opciones.b);
   const [anterior, setAnterior] = useState("");
-  const [recordatorio, setRecordatorio] = useState("");
+  const [recordatorio, setRecordatorio] = useState([]);
 
   const handleClickA = () => {
     if(estado > 5){
@@ -27,7 +27,7 @@ const Main = () => {
       setOpcionaActual(a);
       setOpcionbActual(b);
       setAnterior("A");
-      setRecordatorio(recordatorio + anterior);
+      setRecordatorio([...recordatorio, anterior]);
     }
   };
 
@@ -42,11 +42,9 @@ const Main = () => {
       setOpcionaActual(a);
       setOpcionbActual(b);
       setAnterior("B");
-      setRecordatorio(recordatorio + anterior);
+      setRecordatorio([...recordatorio, anterior]);
     }
   };
-
-  const listaHistorial = [...recordatorio];
 
   return (
     <div className="layout">
@@ -61,10 +59,11 @@ const Main = () => {
         
         <Historial
           seleccionAnterior={ anterior }
-          historialOpciones={ listaHistorial.map(
-            (e, index) => (
-              <li key={ index }>{ e }</li>)
-            )}
+          historialOpciones={ 
+            recordatorio.map( recor => (
+              <li key={ recor }>{ recor }</li>
+            ))
+          }
         />
       </div>
   )
