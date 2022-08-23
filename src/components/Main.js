@@ -13,7 +13,7 @@ const Main = () => {
   const [historiaActual, setHistoriaActual] = useState(obtenerPorId("1").historia);
   const [opcionaActual, setOpcionaActual] = useState(obtenerPorId("1").opciones.a);
   const [opcionbActual, setOpcionbActual] = useState(obtenerPorId("1").opciones.b);
-  const [anterior, setAnterior] = useState("");
+  const [anterior, setAnterior] = useState("inicio");
   const [recordatorio, setRecordatorio] = useState([]);
 
   const handleClickA = () => {
